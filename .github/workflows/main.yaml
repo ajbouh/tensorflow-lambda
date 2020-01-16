@@ -13,9 +13,10 @@ jobs:
       uses: "docker://lambci/lambda:build-nodejs10.x"
       with:
         entrypoint: "./scripts/build.sh"
-    - name: "publish"
-      uses: "docker://lambci/lambda:build-nodejs10.x"
+    - uses: actions/setup-node@v1
       with:
-        entrypoint: "publish --access public"
+        node-version: '10.x'
+        registry-url: 'https://registry.npmjs.org'
+    - run: "npm publish --access public"
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
