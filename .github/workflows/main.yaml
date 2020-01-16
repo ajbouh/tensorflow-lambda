@@ -2,15 +2,20 @@ on: push
 
 jobs:
   build_and_publish:
+    runs-on: [ubuntu-18.04]
     name: "build and publish"
     steps:
-    - name: tag
-      uses: "actions/bin/filter@master"
-      args: "tag"
+    - 
+      uses: actions/checkout@v1
+#     - name: tag
+#       uses: "actions/bin/filter@master"
+#       args: "tag"
     - name: "build"
       uses: "docker://lambci/lambda:build-nodejs10.x"
-      runs: ["./scripts/build.sh"]
-    - name: "publish"
-      uses: "actions/npm@master"
-      args: "publish --access public"
-      secrets: ["NPM_AUTH_TOKEN"]
+      with:
+        entrypoint: "./scripts/build.sh"
+      
+#     - name: "publish"
+#       uses: "actions/npm@master"
+#       run: "publish --access public"
+#       secrets: ["NPM_AUTH_TOKEN"]
