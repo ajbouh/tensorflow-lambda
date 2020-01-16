@@ -3,14 +3,14 @@
   "description": "Run tensorflow on lambda",
   "version": "1.5.1",
   "main": "index.js",
-  "author": "lucleray",
-  "homepage": "https://github.com/lucleray/tensorflow-lambda#readme",
+  "author": "ajbouh",
+  "homepage": "https://github.com/ajbouh/tensorflow-lambda-latest#readme",
   "bugs": {
-    "url": "https://github.com/lucleray/tensorflow-lambda/issues"
+    "url": "https://github.com/ajbouh/tensorflow-lambda-latest/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucleray/tensorflow-lambda.git"
+    "url": "https://github.com/ajbouh/tensorflow-lambda.git"
   },
   "license": "MIT",
   "keywords": [
